@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.FinalCurseLabel = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.CursLabel = new System.Windows.Forms.Label();
@@ -42,37 +43,31 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.comboBox10 = new System.Windows.Forms.ComboBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.comboBox9 = new System.Windows.Forms.ComboBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.comboBox8 = new System.Windows.Forms.ComboBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.FinalCurseLabel = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -112,10 +107,19 @@
             this.tabPage1.Text = "Валюта";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // FinalCurseLabel
+            // 
+            this.FinalCurseLabel.AutoSize = true;
+            this.FinalCurseLabel.Location = new System.Drawing.Point(311, 48);
+            this.FinalCurseLabel.Name = "FinalCurseLabel";
+            this.FinalCurseLabel.Size = new System.Drawing.Size(43, 13);
+            this.FinalCurseLabel.TabIndex = 6;
+            this.FinalCurseLabel.Text = "Итого: ";
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(61, 29);
+            this.label13.Location = new System.Drawing.Point(64, 29);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(33, 13);
             this.label13.TabIndex = 5;
@@ -133,7 +137,7 @@
             // CursLabel
             // 
             this.CursLabel.AutoSize = true;
-            this.CursLabel.Location = new System.Drawing.Point(61, 78);
+            this.CursLabel.Location = new System.Drawing.Point(24, 69);
             this.CursLabel.Name = "CursLabel";
             this.CursLabel.Size = new System.Drawing.Size(37, 13);
             this.CursLabel.TabIndex = 3;
@@ -164,7 +168,6 @@
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.comboBox2);
-            this.tabPage2.Controls.Add(this.button2);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -185,7 +188,7 @@
             "Ярды",
             "Футы",
             "Дюймы"});
-            this.comboBox11.Location = new System.Drawing.Point(541, 39);
+            this.comboBox11.Location = new System.Drawing.Point(299, 36);
             this.comboBox11.Name = "comboBox11";
             this.comboBox11.Size = new System.Drawing.Size(121, 21);
             this.comboBox11.TabIndex = 10;
@@ -196,6 +199,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 9;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label4
             // 
@@ -209,11 +213,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(449, 39);
+            this.label3.Location = new System.Drawing.Point(323, 20);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(43, 13);
             this.label3.TabIndex = 8;
-            this.label3.Text = "label3";
+            this.label3.Text = "Итого: ";
             // 
             // comboBox2
             // 
@@ -232,15 +236,6 @@
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 5;
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(298, 35);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(116, 21);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Конвертировать ->";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.comboBox10);
@@ -248,7 +243,6 @@
             this.tabPage3.Controls.Add(this.label6);
             this.tabPage3.Controls.Add(this.label5);
             this.tabPage3.Controls.Add(this.comboBox3);
-            this.tabPage3.Controls.Add(this.button3);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -312,15 +306,6 @@
             this.comboBox3.Size = new System.Drawing.Size(121, 21);
             this.comboBox3.TabIndex = 5;
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(314, 48);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(116, 21);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Конвертировать ->";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.comboBox9);
@@ -328,7 +313,6 @@
             this.tabPage4.Controls.Add(this.label8);
             this.tabPage4.Controls.Add(this.label7);
             this.tabPage4.Controls.Add(this.comboBox4);
-            this.tabPage4.Controls.Add(this.button4);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -390,20 +374,10 @@
             this.comboBox4.Size = new System.Drawing.Size(121, 21);
             this.comboBox4.TabIndex = 5;
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(303, 39);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(116, 21);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "Конвертировать ->";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.comboBox8);
             this.tabPage5.Controls.Add(this.textBox5);
-            this.tabPage5.Controls.Add(this.button5);
             this.tabPage5.Controls.Add(this.label9);
             this.tabPage5.Controls.Add(this.comboBox5);
             this.tabPage5.Controls.Add(this.label10);
@@ -436,15 +410,6 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 20);
             this.textBox5.TabIndex = 9;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(304, 40);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(116, 21);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "Конвертировать ->";
-            this.button5.UseVisualStyleBackColor = true;
             // 
             // label9
             // 
@@ -483,7 +448,6 @@
             // 
             this.tabPage6.Controls.Add(this.comboBox7);
             this.tabPage6.Controls.Add(this.textBox6);
-            this.tabPage6.Controls.Add(this.button6);
             this.tabPage6.Controls.Add(this.label11);
             this.tabPage6.Controls.Add(this.comboBox6);
             this.tabPage6.Controls.Add(this.label12);
@@ -514,15 +478,6 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(100, 20);
             this.textBox6.TabIndex = 9;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(313, 48);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(116, 21);
-            this.button6.TabIndex = 7;
-            this.button6.Text = "Конвертировать ->";
-            this.button6.UseVisualStyleBackColor = true;
             // 
             // label11
             // 
@@ -559,15 +514,6 @@
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // FinalCurseLabel
-            // 
-            this.FinalCurseLabel.AutoSize = true;
-            this.FinalCurseLabel.Location = new System.Drawing.Point(311, 48);
-            this.FinalCurseLabel.Name = "FinalCurseLabel";
-            this.FinalCurseLabel.Size = new System.Drawing.Size(43, 13);
-            this.FinalCurseLabel.TabIndex = 6;
-            this.FinalCurseLabel.Text = "Итого: ";
             // 
             // Form1
             // 
@@ -613,24 +559,19 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox comboBox6;
         private System.Windows.Forms.Label label12;

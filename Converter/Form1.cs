@@ -12,14 +12,39 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using System.Net.Http;
 using Newtonsoft.Json.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Converter
 {
     public partial class Form1 : Form
     {
 
-        string url = "https://currate.ru/api/";
-        string apiKey = "4e2ffd1d6177270f8d59fe3ca54f00d5";
+        const string url = "https://currate.ru/api/";
+        const string apiKey = "4e2ffd1d6177270f8d59fe3ca54f00d5";
+
+        private Dictionary<string, double> conversionFactors = new Dictionary<string, double>()
+        {
+            {"Километры", 1},
+            {"Метры", 1000},
+            {"Дециметры", 10000},
+            {"Сантиметры", 100000},
+            {"Мили", 0.621371},
+            {"Ярды", 1093.61},
+            {"Футы", 3280.84},
+            {"Дюймы", 39370.1}
+        };
+
+        private Dictionary<string, string> symbolValues = new Dictionary<string, string>()
+        {
+            {"Километры", "km"},
+            {"Метры", "m"},
+            {"Дециметры", "dm"},
+            {"Сантиметры", "cm"},
+            {"Мили", "mi"},
+            {"Ярды", "yd"},
+            {"Футы", "ft"},
+            {"Дюймы", "in"}
+        };
 
         CurrencyPairs[] pairsArray = { };
         struct CurrencyPairs
@@ -31,6 +56,13 @@ namespace Converter
         public Form1()
         {
             InitializeComponent();
+            currencyCombo.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            comboBox2.SelectedItem = "Километры";
+            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox11.SelectedItem = "Метры";
+            comboBox11.DropDownStyle = ComboBoxStyle.DropDownList;
+
         }
 
         private async void Form1_Load(object sender, EventArgs e)
@@ -95,9 +127,13 @@ namespace Converter
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            char ch = e.KeyChar;
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
 
-            if (!Char.IsDigit(ch))
+            // Проверяем, чтобы десятичная запятая вводилась только один раз
+            if ((e.KeyChar == ',') && ((sender as System.Windows.Forms.TextBox).Text.IndexOf(',') > -1))
             {
                 e.Handled = true;
             }
@@ -136,7 +172,7 @@ namespace Converter
             if (!string.IsNullOrEmpty(selectedPair.Pair))
             {
                 double rate = selectedPair.Course;
-                CursLabel.Text = $"Курс {selectedCurrencyPair}: {rate}";
+                CursLabel.Text = $"Курс {selectedCurrencyPair}: {rate:F2}";
             }
             else
             {
@@ -148,31 +184,58 @@ namespace Converter
         {
             string selectedCurrencyPair = currencyCombo.SelectedItem.ToString();
             CurrencyPairs selectedPair = pairsArray.FirstOrDefault(pair => pair.Pair == selectedCurrencyPair);
-
-            double count = double.Parse(textBox1.Text);
-            if (selectedCurrencyPair != null)
+            if (double.TryParse(textBox1.Text, out double value))
             {
-                if (selectedPair.Pair != null)
+                double count = double.Parse(textBox1.Text);
+                if (selectedCurrencyPair != null)
                 {
-                    if (double.TryParse(selectedPair.Course.ToString(), out double course))
+                    if (selectedPair.Pair != null)
                     {
-                        double total = count * course;
-                        FinalCurseLabel.Text = $"Итого: {total}";
+                        if (double.TryParse(selectedPair.Course.ToString(), out double course))
+                        {
+                            double total = count * course;
+                            FinalCurseLabel.Text = $"Итого: {total:F2}";
+                        }
+                        else
+                        {
+                            FinalCurseLabel.Text = "Ошибка при парсинге курса";
+                        }
                     }
                     else
                     {
-                        FinalCurseLabel.Text = "Ошибка при парсинге курса";
+                        FinalCurseLabel.Text = "Курс не найден";
                     }
                 }
                 else
                 {
-                    FinalCurseLabel.Text = "Курс не найден";
+                    FinalCurseLabel.Text = "Валютная пара не выбрана";
                 }
             }
             else
             {
-                FinalCurseLabel.Text = "Валютная пара не выбрана";
+                MessageBox.Show("Введите корректное числовое значение.");
             }
+        }
+
+        private void ConvertValueslength()
+        {
+            string fromUnit = comboBox2.SelectedItem.ToString();
+            string toUnit = comboBox11.SelectedItem.ToString();
+
+            if (double.TryParse(textBox2.Text, out double value))
+            {
+                double convertedValue = value * conversionFactors[toUnit] / conversionFactors[fromUnit];
+                label3.Text = $"Итого: {convertedValue:F2} {symbolValues[toUnit]}";
+            }
+            else
+            {
+                MessageBox.Show("Введите корректное числовое значение.");
+            }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            ConvertValueslength();
         }
     }
 }
