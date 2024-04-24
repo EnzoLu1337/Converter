@@ -37,7 +37,12 @@ namespace Converter
             {"Граммы", 1000},
             {"Центнеры", 0.01},
             {"Фунты", 2.2046},
-            {"Унции", 35.2739}
+            {"Унции", 35.2739},
+            {"Кв. километры", 0.000001},
+            {"Кв. метры", 1},
+            {"Кв. дециметры", 100},
+            {"Кв. сантиметры", 10000},
+            {"Гектары", 0.0001}
         };
 
         private Dictionary<string, string> symbolValues = new Dictionary<string, string>()
@@ -55,15 +60,20 @@ namespace Converter
             {"Граммы", "g"},
             {"Центнеры", "q"},
             {"Фунты", "lb"},
-            {"Унции", "oz"}
+            {"Унции", "oz"},
+            {"Кв. километры", "km²"},
+            {"Кв. метры", "m²"},
+            {"Кв. дециметры", "dm²"},
+            {"Кв. сантиметры", "cm²"},
+            {"Гектары", "ha"}
         };
 
-        CurrencyPairs[] pairsArray = { };
         struct CurrencyPairs
         {
             public string Pair;
             public double Course;
         }
+        CurrencyPairs[] pairsArray = { };
 
         public Form1()
         {
@@ -79,6 +89,12 @@ namespace Converter
             comboBox3.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox10.SelectedItem = "Тонны";
             comboBox10.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            comboBox4.SelectedItem = "Кв. метры";
+            comboBox4.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox9.SelectedItem = "Гектары";
+            comboBox9.DropDownStyle = ComboBoxStyle.DropDownList;
+
 
         }
 
@@ -259,6 +275,11 @@ namespace Converter
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
             ConvertValues(comboBox3, comboBox10, textBox3, label5);
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            ConvertValues(comboBox4, comboBox9, textBox4, label7);
         }
     }
 }
