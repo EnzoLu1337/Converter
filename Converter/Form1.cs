@@ -42,7 +42,13 @@ namespace Converter
             {"Кв. метры", 1},
             {"Кв. дециметры", 100},
             {"Кв. сантиметры", 10000},
-            {"Гектары", 0.0001}
+            {"Гектары", 0.0001},
+            {"Байт", 1125899906842624},
+            {"Килобайт", 1099511627776},
+            {"Мегабайт", 1073741824},
+            {"Гигабайт", 1048576},
+            {"Терабайт", 1024},
+            {"Петабайт", 1}
         };
 
         private Dictionary<string, string> symbolValues = new Dictionary<string, string>()
@@ -65,7 +71,13 @@ namespace Converter
             {"Кв. метры", "m²"},
             {"Кв. дециметры", "dm²"},
             {"Кв. сантиметры", "cm²"},
-            {"Гектары", "ha"}
+            {"Гектары", "ha"},
+            {"Байт", "Б"},
+            {"Килобайт", "КБ"},
+            {"Мегабайт", "МБ"},
+            {"Гигабайт", "ГБ"},
+            {"Терабайт", "ТБ"},
+            {"Петабайт", "ПБ"}
         };
 
         struct CurrencyPairs
@@ -80,20 +92,25 @@ namespace Converter
             InitializeComponent();
             currencyCombo.DropDownStyle = ComboBoxStyle.DropDownList;
 
-            comboBox2.SelectedItem = "Километры";
-            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox11.SelectedItem = "Метры";
-            comboBox11.DropDownStyle = ComboBoxStyle.DropDownList;
+            lengthComboFrom.SelectedItem = "Километры";
+            lengthComboFrom.DropDownStyle = ComboBoxStyle.DropDownList;
+            lengthComboTo.SelectedItem = "Метры";
+            lengthComboTo.DropDownStyle = ComboBoxStyle.DropDownList;
 
-            comboBox3.SelectedItem = "Килограммы";
-            comboBox3.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox10.SelectedItem = "Тонны";
-            comboBox10.DropDownStyle = ComboBoxStyle.DropDownList;
+            WeightComboFrom.SelectedItem = "Килограммы";
+            WeightComboFrom.DropDownStyle = ComboBoxStyle.DropDownList;
+            WeightComboTo.SelectedItem = "Тонны";
+            WeightComboTo.DropDownStyle = ComboBoxStyle.DropDownList;
 
-            comboBox4.SelectedItem = "Кв. метры";
-            comboBox4.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox9.SelectedItem = "Гектары";
-            comboBox9.DropDownStyle = ComboBoxStyle.DropDownList;
+            areaComboFrom.SelectedItem = "Кв. метры";
+            areaComboFrom.DropDownStyle = ComboBoxStyle.DropDownList;
+            areaComboTo.SelectedItem = "Гектары";
+            areaComboTo.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            dataComboFrom.SelectedItem = "Мегабайт";
+            dataComboFrom.DropDownStyle = ComboBoxStyle.DropDownList;
+            dataComboTo.SelectedItem = "Гигабайт";
+            dataComboTo.DropDownStyle = ComboBoxStyle.DropDownList;
 
 
         }
@@ -165,7 +182,6 @@ namespace Converter
                 e.Handled = true;
             }
 
-            // Проверяем, чтобы десятичная запятая вводилась только один раз
             if ((e.KeyChar == ',') && ((sender as System.Windows.Forms.TextBox).Text.IndexOf(',') > -1))
             {
                 e.Handled = true;
@@ -217,9 +233,9 @@ namespace Converter
         {
             string selectedCurrencyPair = currencyCombo.SelectedItem.ToString();
             CurrencyPairs selectedPair = pairsArray.FirstOrDefault(pair => pair.Pair == selectedCurrencyPair);
-            if (double.TryParse(textBox1.Text, out double value))
+            if (double.TryParse(currencyBox.Text, out double value))
             {
-                double count = double.Parse(textBox1.Text);
+                double count = double.Parse(currencyBox.Text);
                 if (selectedCurrencyPair != null)
                 {
                     if (selectedPair.Pair != null)
@@ -269,17 +285,22 @@ namespace Converter
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            ConvertValues(comboBox2, comboBox11, textBox2, label3);
+            ConvertValues(lengthComboFrom, lengthComboTo, lengthTextBox, totaLengtLabel);
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-            ConvertValues(comboBox3, comboBox10, textBox3, label5);
+            ConvertValues(WeightComboFrom, WeightComboTo, weightTextBox, totalWeightLabel);
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
-            ConvertValues(comboBox4, comboBox9, textBox4, label7);
+            ConvertValues(areaComboFrom, areaComboTo, areaTextBox, totalAreaLabel);
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+            ConvertValues(dataComboFrom, dataComboTo, dataTextBox, totalDataLabel);
         }
     }
 }

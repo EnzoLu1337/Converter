@@ -33,33 +33,33 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.FinalCurseLabel = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.currencyBox = new System.Windows.Forms.TextBox();
             this.CursLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.currencyCombo = new System.Windows.Forms.ComboBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.comboBox11 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.lengthComboTo = new System.Windows.Forms.ComboBox();
+            this.lengthTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.totaLengtLabel = new System.Windows.Forms.Label();
+            this.lengthComboFrom = new System.Windows.Forms.ComboBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.comboBox10 = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.WeightComboTo = new System.Windows.Forms.ComboBox();
+            this.weightTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.totalWeightLabel = new System.Windows.Forms.Label();
+            this.WeightComboFrom = new System.Windows.Forms.ComboBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.comboBox9 = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.areaComboTo = new System.Windows.Forms.ComboBox();
+            this.areaTextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.totalAreaLabel = new System.Windows.Forms.Label();
+            this.areaComboFrom = new System.Windows.Forms.ComboBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.dataComboTo = new System.Windows.Forms.ComboBox();
+            this.dataTextBox = new System.Windows.Forms.TextBox();
+            this.totalDataLabel = new System.Windows.Forms.Label();
+            this.dataComboFrom = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
@@ -95,7 +95,7 @@
             // 
             this.tabPage1.Controls.Add(this.FinalCurseLabel);
             this.tabPage1.Controls.Add(this.label13);
-            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.currencyBox);
             this.tabPage1.Controls.Add(this.CursLabel);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.currencyCombo);
@@ -125,14 +125,14 @@
             this.label13.TabIndex = 5;
             this.label13.Text = "Пара";
             // 
-            // textBox1
+            // currencyBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(172, 45);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
+            this.currencyBox.Location = new System.Drawing.Point(172, 45);
+            this.currencyBox.Name = "currencyBox";
+            this.currencyBox.Size = new System.Drawing.Size(100, 20);
+            this.currencyBox.TabIndex = 4;
+            this.currencyBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.currencyBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // CursLabel
             // 
@@ -163,11 +163,11 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.comboBox11);
-            this.tabPage2.Controls.Add(this.textBox2);
+            this.tabPage2.Controls.Add(this.lengthComboTo);
+            this.tabPage2.Controls.Add(this.lengthTextBox);
             this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Controls.Add(this.label3);
-            this.tabPage2.Controls.Add(this.comboBox2);
+            this.tabPage2.Controls.Add(this.totaLengtLabel);
+            this.tabPage2.Controls.Add(this.lengthComboFrom);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -176,10 +176,10 @@
             this.tabPage2.Text = "Длина";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // comboBox11
+            // lengthComboTo
             // 
-            this.comboBox11.FormattingEnabled = true;
-            this.comboBox11.Items.AddRange(new object[] {
+            this.lengthComboTo.FormattingEnabled = true;
+            this.lengthComboTo.Items.AddRange(new object[] {
             "Километры",
             "Метры",
             "Дециметры",
@@ -188,19 +188,19 @@
             "Ярды",
             "Футы",
             "Дюймы"});
-            this.comboBox11.Location = new System.Drawing.Point(299, 36);
-            this.comboBox11.Name = "comboBox11";
-            this.comboBox11.Size = new System.Drawing.Size(121, 21);
-            this.comboBox11.TabIndex = 10;
+            this.lengthComboTo.Location = new System.Drawing.Point(299, 36);
+            this.lengthComboTo.Name = "lengthComboTo";
+            this.lengthComboTo.Size = new System.Drawing.Size(121, 21);
+            this.lengthComboTo.TabIndex = 10;
             // 
-            // textBox2
+            // lengthTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(174, 36);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 9;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
+            this.lengthTextBox.Location = new System.Drawing.Point(174, 36);
+            this.lengthTextBox.Name = "lengthTextBox";
+            this.lengthTextBox.Size = new System.Drawing.Size(100, 20);
+            this.lengthTextBox.TabIndex = 9;
+            this.lengthTextBox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.lengthTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // label4
             // 
@@ -211,19 +211,19 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Значение";
             // 
-            // label3
+            // totaLengtLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(323, 20);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Итого: ";
+            this.totaLengtLabel.AutoSize = true;
+            this.totaLengtLabel.Location = new System.Drawing.Point(323, 20);
+            this.totaLengtLabel.Name = "totaLengtLabel";
+            this.totaLengtLabel.Size = new System.Drawing.Size(43, 13);
+            this.totaLengtLabel.TabIndex = 8;
+            this.totaLengtLabel.Text = "Итого: ";
             // 
-            // comboBox2
+            // lengthComboFrom
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.lengthComboFrom.FormattingEnabled = true;
+            this.lengthComboFrom.Items.AddRange(new object[] {
             "Километры",
             "Метры",
             "Дециметры",
@@ -232,18 +232,18 @@
             "Ярды",
             "Футы",
             "Дюймы"});
-            this.comboBox2.Location = new System.Drawing.Point(29, 36);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 5;
+            this.lengthComboFrom.Location = new System.Drawing.Point(29, 36);
+            this.lengthComboFrom.Name = "lengthComboFrom";
+            this.lengthComboFrom.Size = new System.Drawing.Size(121, 21);
+            this.lengthComboFrom.TabIndex = 5;
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.comboBox10);
-            this.tabPage3.Controls.Add(this.textBox3);
+            this.tabPage3.Controls.Add(this.WeightComboTo);
+            this.tabPage3.Controls.Add(this.weightTextBox);
             this.tabPage3.Controls.Add(this.label6);
-            this.tabPage3.Controls.Add(this.label5);
-            this.tabPage3.Controls.Add(this.comboBox3);
+            this.tabPage3.Controls.Add(this.totalWeightLabel);
+            this.tabPage3.Controls.Add(this.WeightComboFrom);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -252,29 +252,29 @@
             this.tabPage3.Text = "Масса";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // comboBox10
+            // WeightComboTo
             // 
-            this.comboBox10.FormattingEnabled = true;
-            this.comboBox10.Items.AddRange(new object[] {
+            this.WeightComboTo.FormattingEnabled = true;
+            this.WeightComboTo.Items.AddRange(new object[] {
             "Тонны",
             "Килограммы",
             "Граммы",
             "Центнеры",
             "Фунты",
             "Унции"});
-            this.comboBox10.Location = new System.Drawing.Point(320, 49);
-            this.comboBox10.Name = "comboBox10";
-            this.comboBox10.Size = new System.Drawing.Size(121, 21);
-            this.comboBox10.TabIndex = 10;
+            this.WeightComboTo.Location = new System.Drawing.Point(320, 49);
+            this.WeightComboTo.Name = "WeightComboTo";
+            this.WeightComboTo.Size = new System.Drawing.Size(121, 21);
+            this.WeightComboTo.TabIndex = 10;
             // 
-            // textBox3
+            // weightTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(190, 49);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 9;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
-            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
+            this.weightTextBox.Location = new System.Drawing.Point(190, 49);
+            this.weightTextBox.Name = "weightTextBox";
+            this.weightTextBox.Size = new System.Drawing.Size(100, 20);
+            this.weightTextBox.TabIndex = 9;
+            this.weightTextBox.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.weightTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // label6
             // 
@@ -285,37 +285,37 @@
             this.label6.TabIndex = 6;
             this.label6.Text = "Значение";
             // 
-            // label5
+            // totalWeightLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(356, 33);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 13);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Итого: ";
+            this.totalWeightLabel.AutoSize = true;
+            this.totalWeightLabel.Location = new System.Drawing.Point(356, 33);
+            this.totalWeightLabel.Name = "totalWeightLabel";
+            this.totalWeightLabel.Size = new System.Drawing.Size(43, 13);
+            this.totalWeightLabel.TabIndex = 8;
+            this.totalWeightLabel.Text = "Итого: ";
             // 
-            // comboBox3
+            // WeightComboFrom
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.WeightComboFrom.FormattingEnabled = true;
+            this.WeightComboFrom.Items.AddRange(new object[] {
             "Тонны",
             "Килограммы",
             "Граммы",
             "Центнеры",
             "Фунты",
             "Унции"});
-            this.comboBox3.Location = new System.Drawing.Point(45, 49);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 5;
+            this.WeightComboFrom.Location = new System.Drawing.Point(45, 49);
+            this.WeightComboFrom.Name = "WeightComboFrom";
+            this.WeightComboFrom.Size = new System.Drawing.Size(121, 21);
+            this.WeightComboFrom.TabIndex = 5;
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.comboBox9);
-            this.tabPage4.Controls.Add(this.textBox4);
+            this.tabPage4.Controls.Add(this.areaComboTo);
+            this.tabPage4.Controls.Add(this.areaTextBox);
             this.tabPage4.Controls.Add(this.label8);
-            this.tabPage4.Controls.Add(this.label7);
-            this.tabPage4.Controls.Add(this.comboBox4);
+            this.tabPage4.Controls.Add(this.totalAreaLabel);
+            this.tabPage4.Controls.Add(this.areaComboFrom);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -324,28 +324,28 @@
             this.tabPage4.Text = "Площадь";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // comboBox9
+            // areaComboTo
             // 
-            this.comboBox9.FormattingEnabled = true;
-            this.comboBox9.Items.AddRange(new object[] {
+            this.areaComboTo.FormattingEnabled = true;
+            this.areaComboTo.Items.AddRange(new object[] {
             "Кв. километры",
             "Кв. метры",
             "Кв. дециметры",
             "Кв. сантиметры",
             "Гектары"});
-            this.comboBox9.Location = new System.Drawing.Point(315, 39);
-            this.comboBox9.Name = "comboBox9";
-            this.comboBox9.Size = new System.Drawing.Size(121, 21);
-            this.comboBox9.TabIndex = 10;
+            this.areaComboTo.Location = new System.Drawing.Point(315, 39);
+            this.areaComboTo.Name = "areaComboTo";
+            this.areaComboTo.Size = new System.Drawing.Size(121, 21);
+            this.areaComboTo.TabIndex = 10;
             // 
-            // textBox4
+            // areaTextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(179, 40);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 9;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
-            this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
+            this.areaTextBox.Location = new System.Drawing.Point(179, 40);
+            this.areaTextBox.Name = "areaTextBox";
+            this.areaTextBox.Size = new System.Drawing.Size(100, 20);
+            this.areaTextBox.TabIndex = 9;
+            this.areaTextBox.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.areaTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // label8
             // 
@@ -356,35 +356,35 @@
             this.label8.TabIndex = 6;
             this.label8.Text = "Значение";
             // 
-            // label7
+            // totalAreaLabel
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(356, 23);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(43, 13);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "Итого: ";
+            this.totalAreaLabel.AutoSize = true;
+            this.totalAreaLabel.Location = new System.Drawing.Point(356, 23);
+            this.totalAreaLabel.Name = "totalAreaLabel";
+            this.totalAreaLabel.Size = new System.Drawing.Size(43, 13);
+            this.totalAreaLabel.TabIndex = 8;
+            this.totalAreaLabel.Text = "Итого: ";
             // 
-            // comboBox4
+            // areaComboFrom
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
+            this.areaComboFrom.FormattingEnabled = true;
+            this.areaComboFrom.Items.AddRange(new object[] {
             "Кв. километры",
             "Кв. метры",
             "Кв. дециметры",
             "Кв. сантиметры",
             "Гектары"});
-            this.comboBox4.Location = new System.Drawing.Point(34, 40);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 21);
-            this.comboBox4.TabIndex = 5;
+            this.areaComboFrom.Location = new System.Drawing.Point(34, 40);
+            this.areaComboFrom.Name = "areaComboFrom";
+            this.areaComboFrom.Size = new System.Drawing.Size(121, 21);
+            this.areaComboFrom.TabIndex = 5;
             // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.comboBox8);
-            this.tabPage5.Controls.Add(this.textBox5);
-            this.tabPage5.Controls.Add(this.label9);
-            this.tabPage5.Controls.Add(this.comboBox5);
+            this.tabPage5.Controls.Add(this.dataComboTo);
+            this.tabPage5.Controls.Add(this.dataTextBox);
+            this.tabPage5.Controls.Add(this.totalDataLabel);
+            this.tabPage5.Controls.Add(this.dataComboFrom);
             this.tabPage5.Controls.Add(this.label10);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
@@ -394,52 +394,53 @@
             this.tabPage5.Text = "Данные";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // comboBox8
+            // dataComboTo
             // 
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Items.AddRange(new object[] {
+            this.dataComboTo.FormattingEnabled = true;
+            this.dataComboTo.Items.AddRange(new object[] {
             "Байт",
             "Килобайт",
             "Мегабайт",
             "Гигабайт",
             "Терабайт",
             "Петабайт"});
-            this.comboBox8.Location = new System.Drawing.Point(536, 44);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(121, 21);
-            this.comboBox8.TabIndex = 10;
+            this.dataComboTo.Location = new System.Drawing.Point(319, 40);
+            this.dataComboTo.Name = "dataComboTo";
+            this.dataComboTo.Size = new System.Drawing.Size(121, 21);
+            this.dataComboTo.TabIndex = 10;
             // 
-            // textBox5
+            // dataTextBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(180, 41);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 9;
-            this.textBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
+            this.dataTextBox.Location = new System.Drawing.Point(180, 41);
+            this.dataTextBox.Name = "dataTextBox";
+            this.dataTextBox.Size = new System.Drawing.Size(100, 20);
+            this.dataTextBox.TabIndex = 9;
+            this.dataTextBox.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.dataTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
-            // label9
+            // totalDataLabel
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(455, 44);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(35, 13);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "label9";
+            this.totalDataLabel.AutoSize = true;
+            this.totalDataLabel.Location = new System.Drawing.Point(360, 24);
+            this.totalDataLabel.Name = "totalDataLabel";
+            this.totalDataLabel.Size = new System.Drawing.Size(43, 13);
+            this.totalDataLabel.TabIndex = 8;
+            this.totalDataLabel.Text = "Итого: ";
             // 
-            // comboBox5
+            // dataComboFrom
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
+            this.dataComboFrom.FormattingEnabled = true;
+            this.dataComboFrom.Items.AddRange(new object[] {
             "Байт",
             "Килобайт",
             "Мегабайт",
             "Гигабайт",
             "Терабайт",
             "Петабайт"});
-            this.comboBox5.Location = new System.Drawing.Point(35, 41);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(121, 21);
-            this.comboBox5.TabIndex = 5;
+            this.dataComboFrom.Location = new System.Drawing.Point(35, 41);
+            this.dataComboFrom.Name = "dataComboFrom";
+            this.dataComboFrom.Size = new System.Drawing.Size(121, 21);
+            this.dataComboFrom.TabIndex = 5;
             // 
             // label10
             // 
@@ -558,33 +559,33 @@
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox currencyCombo;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox currencyBox;
         private System.Windows.Forms.Label CursLabel;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox lengthTextBox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label totaLengtLabel;
+        private System.Windows.Forms.ComboBox lengthComboFrom;
+        private System.Windows.Forms.TextBox weightTextBox;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label totalWeightLabel;
+        private System.Windows.Forms.ComboBox WeightComboFrom;
+        private System.Windows.Forms.TextBox areaTextBox;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.Label totalAreaLabel;
+        private System.Windows.Forms.ComboBox areaComboFrom;
+        private System.Windows.Forms.TextBox dataTextBox;
+        private System.Windows.Forms.Label totalDataLabel;
+        private System.Windows.Forms.ComboBox dataComboFrom;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox comboBox6;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox comboBox11;
-        private System.Windows.Forms.ComboBox comboBox10;
-        private System.Windows.Forms.ComboBox comboBox9;
-        private System.Windows.Forms.ComboBox comboBox8;
+        private System.Windows.Forms.ComboBox lengthComboTo;
+        private System.Windows.Forms.ComboBox WeightComboTo;
+        private System.Windows.Forms.ComboBox areaComboTo;
+        private System.Windows.Forms.ComboBox dataComboTo;
         private System.Windows.Forms.ComboBox comboBox7;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label FinalCurseLabel;
