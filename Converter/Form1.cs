@@ -31,7 +31,13 @@ namespace Converter
             {"Мили", 0.621371},
             {"Ярды", 1093.61},
             {"Футы", 3280.84},
-            {"Дюймы", 39370.1}
+            {"Дюймы", 39370.1},
+            {"Тонны", 0.001},
+            {"Килограммы", 1},
+            {"Граммы", 1000},
+            {"Центнеры", 0.01},
+            {"Фунты", 2.2046},
+            {"Унции", 35.2739}
         };
 
         private Dictionary<string, string> symbolValues = new Dictionary<string, string>()
@@ -43,7 +49,13 @@ namespace Converter
             {"Мили", "mi"},
             {"Ярды", "yd"},
             {"Футы", "ft"},
-            {"Дюймы", "in"}
+            {"Дюймы", "in"},
+            {"Тонны", "t"},
+            {"Килограммы", "kg"},
+            {"Граммы", "g"},
+            {"Центнеры", "q"},
+            {"Фунты", "lb"},
+            {"Унции", "oz"}
         };
 
         CurrencyPairs[] pairsArray = { };
@@ -62,6 +74,11 @@ namespace Converter
             comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox11.SelectedItem = "Метры";
             comboBox11.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            comboBox3.SelectedItem = "Килограммы";
+            comboBox3.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox10.SelectedItem = "Тонны";
+            comboBox10.DropDownStyle = ComboBoxStyle.DropDownList;
 
         }
 
@@ -125,7 +142,7 @@ namespace Converter
             }
         }
 
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        private void textBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
             {
@@ -217,15 +234,15 @@ namespace Converter
             }
         }
 
-        private void ConvertValueslength()
+        private void ConvertValues(System.Windows.Forms.ComboBox fromUnitComboBox, System.Windows.Forms.ComboBox toUnitComboBox, System.Windows.Forms.TextBox valueTextBox, Label resultLabel)
         {
-            string fromUnit = comboBox2.SelectedItem.ToString();
-            string toUnit = comboBox11.SelectedItem.ToString();
+            string fromUnit = fromUnitComboBox.SelectedItem.ToString();
+            string toUnit = toUnitComboBox.SelectedItem.ToString();
 
-            if (double.TryParse(textBox2.Text, out double value))
+            if (double.TryParse(valueTextBox.Text, out double value))
             {
                 double convertedValue = value * conversionFactors[toUnit] / conversionFactors[fromUnit];
-                label3.Text = $"Итого: {convertedValue:F2} {symbolValues[toUnit]}";
+                resultLabel.Text = $"Итого: {convertedValue:F3} {symbolValues[toUnit]}";
             }
             else
             {
@@ -233,9 +250,15 @@ namespace Converter
             }
         }
 
+
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            ConvertValueslength();
+            ConvertValues(comboBox2, comboBox11, textBox2, label3);
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            ConvertValues(comboBox3, comboBox10, textBox3, label5);
         }
     }
 }

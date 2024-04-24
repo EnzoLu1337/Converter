@@ -132,7 +132,7 @@
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 4;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // CursLabel
             // 
@@ -200,6 +200,7 @@
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 9;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // label4
             // 
@@ -255,13 +256,13 @@
             // 
             this.comboBox10.FormattingEnabled = true;
             this.comboBox10.Items.AddRange(new object[] {
-            "Тонна",
-            "Килограмм",
-            "Грамм",
-            "Центнер",
-            "Фунт",
-            "Унция"});
-            this.comboBox10.Location = new System.Drawing.Point(562, 49);
+            "Тонны",
+            "Килограммы",
+            "Граммы",
+            "Центнеры",
+            "Фунты",
+            "Унции"});
+            this.comboBox10.Location = new System.Drawing.Point(320, 49);
             this.comboBox10.Name = "comboBox10";
             this.comboBox10.Size = new System.Drawing.Size(121, 21);
             this.comboBox10.TabIndex = 10;
@@ -272,6 +273,8 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 20);
             this.textBox3.TabIndex = 9;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // label6
             // 
@@ -285,22 +288,22 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(465, 52);
+            this.label5.Location = new System.Drawing.Point(356, 33);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.Size = new System.Drawing.Size(43, 13);
             this.label5.TabIndex = 8;
-            this.label5.Text = "label5";
+            this.label5.Text = "Итого: ";
             // 
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Items.AddRange(new object[] {
-            "Тонна",
-            "Килограмм",
-            "Грамм",
-            "Центнер",
-            "Фунт",
-            "Унция"});
+            "Тонны",
+            "Килограммы",
+            "Граммы",
+            "Центнеры",
+            "Фунты",
+            "Унции"});
             this.comboBox3.Location = new System.Drawing.Point(45, 49);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(121, 21);
@@ -341,6 +344,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 20);
             this.textBox4.TabIndex = 9;
+            this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // label8
             // 
@@ -410,6 +414,7 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 20);
             this.textBox5.TabIndex = 9;
+            this.textBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // label9
             // 
