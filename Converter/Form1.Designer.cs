@@ -472,9 +472,9 @@
             this.comboBox7.Items.AddRange(new object[] {
             "Двоичная",
             "Восьмеричная",
-            "Деситичная",
+            "Десятичная",
             "Шестнадцатеричная"});
-            this.comboBox7.Location = new System.Drawing.Point(539, 48);
+            this.comboBox7.Location = new System.Drawing.Point(315, 49);
             this.comboBox7.Name = "comboBox7";
             this.comboBox7.Size = new System.Drawing.Size(121, 21);
             this.comboBox7.TabIndex = 10;
@@ -485,15 +485,17 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(100, 20);
             this.textBox6.TabIndex = 9;
+            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            this.textBox6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumberTextBox_KeyPress);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(464, 52);
+            this.label11.Location = new System.Drawing.Point(339, 33);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(41, 13);
+            this.label11.Size = new System.Drawing.Size(43, 13);
             this.label11.TabIndex = 8;
-            this.label11.Text = "label11";
+            this.label11.Text = "Итого: ";
             // 
             // comboBox6
             // 
@@ -501,7 +503,7 @@
             this.comboBox6.Items.AddRange(new object[] {
             "Двоичная",
             "Восьмеричная",
-            "Деситичная",
+            "Десятичная",
             "Шестнадцатеричная"});
             this.comboBox6.Location = new System.Drawing.Point(44, 49);
             this.comboBox6.Name = "comboBox6";

@@ -48,7 +48,11 @@ namespace Converter
             {"Мегабайт", 1073741824},
             {"Гигабайт", 1048576},
             {"Терабайт", 1024},
-            {"Петабайт", 1}
+            {"Петабайт", 1},
+            {"Двоичная", 2},
+            {"Восьмеричная", 8},
+            {"Десятичная", 10},
+            {"Шестнадцатеричная", 16}
         };
 
         private Dictionary<string, string> symbolValues = new Dictionary<string, string>()
@@ -77,7 +81,11 @@ namespace Converter
             {"Мегабайт", "МБ"},
             {"Гигабайт", "ГБ"},
             {"Терабайт", "ТБ"},
-            {"Петабайт", "ПБ"}
+            {"Петабайт", "ПБ"},
+            {"Двоичная", "₂"},
+            {"Восьмеричная", "₈"},
+            {"Десятичная", "₁₀"},
+            {"Шестнадцатеричная", "₁₆"}
         };
 
         struct CurrencyPairs
@@ -112,7 +120,10 @@ namespace Converter
             dataComboTo.SelectedItem = "Гигабайт";
             dataComboTo.DropDownStyle = ComboBoxStyle.DropDownList;
 
-
+            comboBox6.SelectedItem = "Двоичная";
+            comboBox6.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox7.SelectedItem = "Десятичная";
+            comboBox7.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private async void Form1_Load(object sender, EventArgs e)
@@ -153,7 +164,7 @@ namespace Converter
                         }
                         else
                         {
-                            MessageBox.Show($"Ошибка парсинга курса для валютной пары {pair.Key}: {pair.Value}");
+                            MessageBox.Show($"Ошибка парсинга курса для валютной пары {pair.Key}: {pair.Value}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
 
@@ -172,6 +183,33 @@ namespace Converter
             else
             {
                 Console.WriteLine("Пустой ответ при получении списка валютных пар.");
+            }
+        }
+
+        private void NumberTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string selectedBase = comboBox6.SelectedItem.ToString();
+
+            string validChars = "";
+            switch (selectedBase)
+            {
+                case "Двоичная":
+                    validChars = "01";
+                    break;
+                case "Восьмеричная":
+                    validChars = "01234567";
+                    break;
+                case "Десятичная":
+                    validChars = "0123456789";
+                    break;
+                case "Шестнадцатеричная":
+                    validChars = "0123456789ABCDEF";
+                    break;
+            }
+
+            if (!char.IsControl(e.KeyChar) && !validChars.Contains(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
 
@@ -262,7 +300,8 @@ namespace Converter
             }
             else
             {
-                MessageBox.Show("Введите корректное числовое значение.");
+                MessageBox.Show("Введите корректное числовое значение.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                FinalCurseLabel.Text = $"Итого: {0}";
             }
         }
 
@@ -278,7 +317,47 @@ namespace Converter
             }
             else
             {
-                MessageBox.Show("Введите корректное числовое значение.");
+                MessageBox.Show("Введите корректное числовое значение.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                resultLabel.Text = $"Итого: {0}";
+            }
+        }
+
+        public void ConvertNumber(System.Windows.Forms.ComboBox fromUnitComboBox, System.Windows.Forms.ComboBox toUnitComboBox, System.Windows.Forms.TextBox valueTextBox, Label resultLabel)
+        {
+            if (string.IsNullOrWhiteSpace(valueTextBox.Text))
+            {
+                MessageBox.Show("Ошибка: Введите значение для конвертации", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                resultLabel.Text = $"Итого: {0}";
+                return;
+            }
+
+            string fromUnit = fromUnitComboBox.SelectedItem.ToString();
+            string toUnit = toUnitComboBox.SelectedItem.ToString();
+
+            // Проверяем наличие выбранных единиц измерения в словаре
+            if (!conversionFactors.ContainsKey(fromUnit) || !conversionFactors.ContainsKey(toUnit))
+            {
+                MessageBox.Show("Ошибка: Неверные единицы измерения", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                resultLabel.Text = $"Итого: {0}{symbolValues[toUnit]}";
+                return;
+            }
+
+            // Получаем числовые представления систем счисления из словаря
+            int sourceBaseInt = Convert.ToInt32(conversionFactors[fromUnit]);
+            int targetBaseInt = Convert.ToInt32(conversionFactors[toUnit]);
+
+            try
+            {
+                // Переводим введенное число в десятичную систему счисления
+                int decimalNumber = Convert.ToInt32(valueTextBox.Text, sourceBaseInt);
+                // Переводим число из десятичной системы счисления в целевую систему счисления
+                string result = Convert.ToString(decimalNumber, targetBaseInt);
+                resultLabel.Text = $"Итого: {result}{symbolValues[toUnit]}";
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Ошибка: Неверный формат числа", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                resultLabel.Text = $"Итого: {0}{symbolValues[toUnit]}";
             }
         }
 
@@ -301,6 +380,11 @@ namespace Converter
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
             ConvertValues(dataComboFrom, dataComboTo, dataTextBox, totalDataLabel);
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+            ConvertNumber(comboBox6, comboBox7, textBox6, label11);
         }
     }
 }
