@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.FinalCurseLabel = new System.Windows.Forms.Label();
@@ -68,6 +69,7 @@
             this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -85,10 +87,10 @@
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
-            this.tabControl1.Location = new System.Drawing.Point(-4, -4);
+            this.tabControl1.Location = new System.Drawing.Point(-3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(812, 461);
+            this.tabControl1.Size = new System.Drawing.Size(409, 128);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -102,7 +104,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(804, 435);
+            this.tabPage1.Size = new System.Drawing.Size(401, 102);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Валюта";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -110,7 +112,7 @@
             // FinalCurseLabel
             // 
             this.FinalCurseLabel.AutoSize = true;
-            this.FinalCurseLabel.Location = new System.Drawing.Point(311, 48);
+            this.FinalCurseLabel.Location = new System.Drawing.Point(271, 35);
             this.FinalCurseLabel.Name = "FinalCurseLabel";
             this.FinalCurseLabel.Size = new System.Drawing.Size(43, 13);
             this.FinalCurseLabel.TabIndex = 6;
@@ -119,7 +121,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(64, 29);
+            this.label13.Location = new System.Drawing.Point(49, 16);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(33, 13);
             this.label13.TabIndex = 5;
@@ -127,7 +129,7 @@
             // 
             // currencyBox
             // 
-            this.currencyBox.Location = new System.Drawing.Point(172, 45);
+            this.currencyBox.Location = new System.Drawing.Point(148, 33);
             this.currencyBox.Name = "currencyBox";
             this.currencyBox.Size = new System.Drawing.Size(100, 20);
             this.currencyBox.TabIndex = 4;
@@ -137,7 +139,7 @@
             // CursLabel
             // 
             this.CursLabel.AutoSize = true;
-            this.CursLabel.Location = new System.Drawing.Point(24, 69);
+            this.CursLabel.Location = new System.Drawing.Point(12, 56);
             this.CursLabel.Name = "CursLabel";
             this.CursLabel.Size = new System.Drawing.Size(37, 13);
             this.CursLabel.TabIndex = 3;
@@ -146,7 +148,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(194, 29);
+            this.label1.Location = new System.Drawing.Point(169, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 1;
@@ -155,7 +157,7 @@
             // currencyCombo
             // 
             this.currencyCombo.FormattingEnabled = true;
-            this.currencyCombo.Location = new System.Drawing.Point(27, 45);
+            this.currencyCombo.Location = new System.Drawing.Point(12, 32);
             this.currencyCombo.Name = "currencyCombo";
             this.currencyCombo.Size = new System.Drawing.Size(121, 21);
             this.currencyCombo.TabIndex = 0;
@@ -171,7 +173,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(804, 435);
+            this.tabPage2.Size = new System.Drawing.Size(737, 283);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Длина";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -188,14 +190,14 @@
             "Ярды",
             "Футы",
             "Дюймы"});
-            this.lengthComboTo.Location = new System.Drawing.Point(299, 36);
+            this.lengthComboTo.Location = new System.Drawing.Point(265, 33);
             this.lengthComboTo.Name = "lengthComboTo";
             this.lengthComboTo.Size = new System.Drawing.Size(121, 21);
             this.lengthComboTo.TabIndex = 10;
             // 
             // lengthTextBox
             // 
-            this.lengthTextBox.Location = new System.Drawing.Point(174, 36);
+            this.lengthTextBox.Location = new System.Drawing.Point(148, 33);
             this.lengthTextBox.Name = "lengthTextBox";
             this.lengthTextBox.Size = new System.Drawing.Size(100, 20);
             this.lengthTextBox.TabIndex = 9;
@@ -205,7 +207,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(196, 20);
+            this.label4.Location = new System.Drawing.Point(169, 16);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 13);
             this.label4.TabIndex = 6;
@@ -214,7 +216,7 @@
             // totaLengtLabel
             // 
             this.totaLengtLabel.AutoSize = true;
-            this.totaLengtLabel.Location = new System.Drawing.Point(323, 20);
+            this.totaLengtLabel.Location = new System.Drawing.Point(306, 16);
             this.totaLengtLabel.Name = "totaLengtLabel";
             this.totaLengtLabel.Size = new System.Drawing.Size(43, 13);
             this.totaLengtLabel.TabIndex = 8;
@@ -232,7 +234,7 @@
             "Ярды",
             "Футы",
             "Дюймы"});
-            this.lengthComboFrom.Location = new System.Drawing.Point(29, 36);
+            this.lengthComboFrom.Location = new System.Drawing.Point(12, 32);
             this.lengthComboFrom.Name = "lengthComboFrom";
             this.lengthComboFrom.Size = new System.Drawing.Size(121, 21);
             this.lengthComboFrom.TabIndex = 5;
@@ -247,7 +249,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(804, 435);
+            this.tabPage3.Size = new System.Drawing.Size(737, 283);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Масса";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -262,14 +264,14 @@
             "Центнеры",
             "Фунты",
             "Унции"});
-            this.WeightComboTo.Location = new System.Drawing.Point(320, 49);
+            this.WeightComboTo.Location = new System.Drawing.Point(265, 33);
             this.WeightComboTo.Name = "WeightComboTo";
             this.WeightComboTo.Size = new System.Drawing.Size(121, 21);
             this.WeightComboTo.TabIndex = 10;
             // 
             // weightTextBox
             // 
-            this.weightTextBox.Location = new System.Drawing.Point(190, 49);
+            this.weightTextBox.Location = new System.Drawing.Point(148, 33);
             this.weightTextBox.Name = "weightTextBox";
             this.weightTextBox.Size = new System.Drawing.Size(100, 20);
             this.weightTextBox.TabIndex = 9;
@@ -279,7 +281,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(212, 33);
+            this.label6.Location = new System.Drawing.Point(169, 16);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(55, 13);
             this.label6.TabIndex = 6;
@@ -288,7 +290,7 @@
             // totalWeightLabel
             // 
             this.totalWeightLabel.AutoSize = true;
-            this.totalWeightLabel.Location = new System.Drawing.Point(356, 33);
+            this.totalWeightLabel.Location = new System.Drawing.Point(306, 16);
             this.totalWeightLabel.Name = "totalWeightLabel";
             this.totalWeightLabel.Size = new System.Drawing.Size(43, 13);
             this.totalWeightLabel.TabIndex = 8;
@@ -304,7 +306,7 @@
             "Центнеры",
             "Фунты",
             "Унции"});
-            this.WeightComboFrom.Location = new System.Drawing.Point(45, 49);
+            this.WeightComboFrom.Location = new System.Drawing.Point(12, 32);
             this.WeightComboFrom.Name = "WeightComboFrom";
             this.WeightComboFrom.Size = new System.Drawing.Size(121, 21);
             this.WeightComboFrom.TabIndex = 5;
@@ -319,7 +321,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(804, 435);
+            this.tabPage4.Size = new System.Drawing.Size(737, 283);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Площадь";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -333,14 +335,14 @@
             "Кв. дециметры",
             "Кв. сантиметры",
             "Гектары"});
-            this.areaComboTo.Location = new System.Drawing.Point(315, 39);
+            this.areaComboTo.Location = new System.Drawing.Point(265, 33);
             this.areaComboTo.Name = "areaComboTo";
             this.areaComboTo.Size = new System.Drawing.Size(121, 21);
             this.areaComboTo.TabIndex = 10;
             // 
             // areaTextBox
             // 
-            this.areaTextBox.Location = new System.Drawing.Point(179, 40);
+            this.areaTextBox.Location = new System.Drawing.Point(148, 33);
             this.areaTextBox.Name = "areaTextBox";
             this.areaTextBox.Size = new System.Drawing.Size(100, 20);
             this.areaTextBox.TabIndex = 9;
@@ -350,7 +352,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(201, 24);
+            this.label8.Location = new System.Drawing.Point(169, 16);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(55, 13);
             this.label8.TabIndex = 6;
@@ -359,7 +361,7 @@
             // totalAreaLabel
             // 
             this.totalAreaLabel.AutoSize = true;
-            this.totalAreaLabel.Location = new System.Drawing.Point(356, 23);
+            this.totalAreaLabel.Location = new System.Drawing.Point(306, 16);
             this.totalAreaLabel.Name = "totalAreaLabel";
             this.totalAreaLabel.Size = new System.Drawing.Size(43, 13);
             this.totalAreaLabel.TabIndex = 8;
@@ -374,7 +376,7 @@
             "Кв. дециметры",
             "Кв. сантиметры",
             "Гектары"});
-            this.areaComboFrom.Location = new System.Drawing.Point(34, 40);
+            this.areaComboFrom.Location = new System.Drawing.Point(12, 32);
             this.areaComboFrom.Name = "areaComboFrom";
             this.areaComboFrom.Size = new System.Drawing.Size(121, 21);
             this.areaComboFrom.TabIndex = 5;
@@ -389,7 +391,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(804, 435);
+            this.tabPage5.Size = new System.Drawing.Size(737, 283);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Данные";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -404,14 +406,14 @@
             "Гигабайт",
             "Терабайт",
             "Петабайт"});
-            this.dataComboTo.Location = new System.Drawing.Point(319, 40);
+            this.dataComboTo.Location = new System.Drawing.Point(265, 33);
             this.dataComboTo.Name = "dataComboTo";
             this.dataComboTo.Size = new System.Drawing.Size(121, 21);
             this.dataComboTo.TabIndex = 10;
             // 
             // dataTextBox
             // 
-            this.dataTextBox.Location = new System.Drawing.Point(180, 41);
+            this.dataTextBox.Location = new System.Drawing.Point(148, 33);
             this.dataTextBox.Name = "dataTextBox";
             this.dataTextBox.Size = new System.Drawing.Size(100, 20);
             this.dataTextBox.TabIndex = 9;
@@ -421,7 +423,7 @@
             // totalDataLabel
             // 
             this.totalDataLabel.AutoSize = true;
-            this.totalDataLabel.Location = new System.Drawing.Point(360, 24);
+            this.totalDataLabel.Location = new System.Drawing.Point(306, 16);
             this.totalDataLabel.Name = "totalDataLabel";
             this.totalDataLabel.Size = new System.Drawing.Size(43, 13);
             this.totalDataLabel.TabIndex = 8;
@@ -437,7 +439,7 @@
             "Гигабайт",
             "Терабайт",
             "Петабайт"});
-            this.dataComboFrom.Location = new System.Drawing.Point(35, 41);
+            this.dataComboFrom.Location = new System.Drawing.Point(12, 32);
             this.dataComboFrom.Name = "dataComboFrom";
             this.dataComboFrom.Size = new System.Drawing.Size(121, 21);
             this.dataComboFrom.TabIndex = 5;
@@ -445,7 +447,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(202, 25);
+            this.label10.Location = new System.Drawing.Point(169, 16);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(55, 13);
             this.label10.TabIndex = 6;
@@ -461,7 +463,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(804, 435);
+            this.tabPage6.Size = new System.Drawing.Size(401, 102);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Система счисления";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -474,14 +476,14 @@
             "Восьмеричная",
             "Десятичная",
             "Шестнадцатеричная"});
-            this.comboBox7.Location = new System.Drawing.Point(315, 49);
+            this.comboBox7.Location = new System.Drawing.Point(265, 33);
             this.comboBox7.Name = "comboBox7";
             this.comboBox7.Size = new System.Drawing.Size(121, 21);
             this.comboBox7.TabIndex = 10;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(189, 49);
+            this.textBox6.Location = new System.Drawing.Point(148, 33);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(100, 20);
             this.textBox6.TabIndex = 9;
@@ -491,7 +493,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(339, 33);
+            this.label11.Location = new System.Drawing.Point(306, 16);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(43, 13);
             this.label11.TabIndex = 8;
@@ -505,7 +507,7 @@
             "Восьмеричная",
             "Десятичная",
             "Шестнадцатеричная"});
-            this.comboBox6.Location = new System.Drawing.Point(44, 49);
+            this.comboBox6.Location = new System.Drawing.Point(12, 32);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(121, 21);
             this.comboBox6.TabIndex = 5;
@@ -513,7 +515,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(211, 33);
+            this.label12.Location = new System.Drawing.Point(169, 16);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(55, 13);
             this.label12.TabIndex = 6;
@@ -528,8 +530,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(404, 126);
             this.Controls.Add(this.tabControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Конвертор Величин";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -591,6 +594,7 @@
         private System.Windows.Forms.ComboBox comboBox7;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label FinalCurseLabel;
+        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
     }
 }
 
