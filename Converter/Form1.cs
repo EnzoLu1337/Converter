@@ -22,7 +22,7 @@ namespace Converter
         const string url = "https://currate.ru/api/";
         const string apiKey = "4e2ffd1d6177270f8d59fe3ca54f00d5";
 
-        private Dictionary<string, double> conversionFactors = new Dictionary<string, double>()
+        public Dictionary<string, double> conversionFactors = new Dictionary<string, double>()
         {
             {"Километры", 1},
             {"Метры", 1000},
@@ -55,7 +55,7 @@ namespace Converter
             {"Шестнадцатеричная", 16}
         };
 
-        private Dictionary<string, string> symbolValues = new Dictionary<string, string>()
+        public Dictionary<string, string> symbolValues = new Dictionary<string, string>()
         {
             {"Километры", "km"},
             {"Метры", "m"},
@@ -88,12 +88,12 @@ namespace Converter
             {"Шестнадцатеричная", "₁₆"}
         };
 
-        struct CurrencyPairs
+        public struct CurrencyPairs
         {
             public string Pair;
             public double Course;
         }
-        CurrencyPairs[] pairsArray = { };
+        public CurrencyPairs[] pairsArray = { };
 
         public Form1()
         {
@@ -126,7 +126,7 @@ namespace Converter
             comboBox7.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
-        private async void Form1_Load(object sender, EventArgs e)
+        public async void Form1_Load(object sender, EventArgs e)
         {
             string currencyResponse = await Get($"{url}?get=currency_list&key={apiKey}");
             if (!string.IsNullOrEmpty(currencyResponse))
@@ -186,7 +186,7 @@ namespace Converter
             }
         }
 
-        private void NumberTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        public void NumberTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             string selectedBase = comboBox6.SelectedItem.ToString();
 
@@ -213,7 +213,7 @@ namespace Converter
             }
         }
 
-        private void textBox_KeyPress(object sender, KeyPressEventArgs e)
+        public void textBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
             {
@@ -251,7 +251,7 @@ namespace Converter
             return dataArray.ToObject<string[]>();
         }
 
-        private void currencyCombo_SelectedIndexChanged(object sender, EventArgs e)
+        public void currencyCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedCurrencyPair = currencyCombo.SelectedItem.ToString();
             CurrencyPairs selectedPair = pairsArray.FirstOrDefault(pair => pair.Pair == selectedCurrencyPair);
@@ -267,7 +267,7 @@ namespace Converter
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        public void textBox1_TextChanged(object sender, EventArgs e)
         {
             string selectedCurrencyPair = currencyCombo.SelectedItem.ToString();
             CurrencyPairs selectedPair = pairsArray.FirstOrDefault(pair => pair.Pair == selectedCurrencyPair);
@@ -305,7 +305,7 @@ namespace Converter
             }
         }
 
-        private void ConvertValues(System.Windows.Forms.ComboBox fromUnitComboBox, System.Windows.Forms.ComboBox toUnitComboBox, System.Windows.Forms.TextBox valueTextBox, Label resultLabel)
+        public void ConvertValues(System.Windows.Forms.ComboBox fromUnitComboBox, System.Windows.Forms.ComboBox toUnitComboBox, System.Windows.Forms.TextBox valueTextBox, Label resultLabel)
         {
             string fromUnit = fromUnitComboBox.SelectedItem.ToString();
             string toUnit = toUnitComboBox.SelectedItem.ToString();
@@ -362,27 +362,27 @@ namespace Converter
         }
 
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        public void textBox2_TextChanged(object sender, EventArgs e)
         {
             ConvertValues(lengthComboFrom, lengthComboTo, lengthTextBox, totaLengtLabel);
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
+        public void textBox3_TextChanged(object sender, EventArgs e)
         {
             ConvertValues(WeightComboFrom, WeightComboTo, weightTextBox, totalWeightLabel);
         }
 
-        private void textBox4_TextChanged(object sender, EventArgs e)
+        public void textBox4_TextChanged(object sender, EventArgs e)
         {
             ConvertValues(areaComboFrom, areaComboTo, areaTextBox, totalAreaLabel);
         }
 
-        private void textBox5_TextChanged(object sender, EventArgs e)
+        public void textBox5_TextChanged(object sender, EventArgs e)
         {
             ConvertValues(dataComboFrom, dataComboTo, dataTextBox, totalDataLabel);
         }
 
-        private void textBox6_TextChanged(object sender, EventArgs e)
+        public void textBox6_TextChanged(object sender, EventArgs e)
         {
             ConvertNumber(comboBox6, comboBox7, textBox6, label11);
         }

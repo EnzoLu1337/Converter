@@ -5,7 +5,7 @@
         /// <summary>
         /// Обязательная переменная конструктора.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        public System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Освободить все используемые ресурсы.
@@ -26,7 +26,7 @@
         /// Требуемый метод для поддержки конструктора — не изменяйте 
         /// содержимое этого метода с помощью редактора кода.
         /// </summary>
-        private void InitializeComponent()
+        public void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
@@ -554,45 +554,45 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.TabPage tabPage6;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox currencyCombo;
-        private System.Windows.Forms.TextBox currencyBox;
-        private System.Windows.Forms.Label CursLabel;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.TextBox lengthTextBox;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label totaLengtLabel;
-        private System.Windows.Forms.ComboBox lengthComboFrom;
-        private System.Windows.Forms.TextBox weightTextBox;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label totalWeightLabel;
-        private System.Windows.Forms.ComboBox WeightComboFrom;
-        private System.Windows.Forms.TextBox areaTextBox;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label totalAreaLabel;
-        private System.Windows.Forms.ComboBox areaComboFrom;
-        private System.Windows.Forms.TextBox dataTextBox;
-        private System.Windows.Forms.Label totalDataLabel;
-        private System.Windows.Forms.ComboBox dataComboFrom;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox lengthComboTo;
-        private System.Windows.Forms.ComboBox WeightComboTo;
-        private System.Windows.Forms.ComboBox areaComboTo;
-        private System.Windows.Forms.ComboBox dataComboTo;
-        private System.Windows.Forms.ComboBox comboBox7;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label FinalCurseLabel;
+        public System.Windows.Forms.TabControl tabControl1;
+        public System.Windows.Forms.TabPage tabPage1;
+        public System.Windows.Forms.TabPage tabPage2;
+        public System.Windows.Forms.TabPage tabPage3;
+        public System.Windows.Forms.TabPage tabPage4;
+        public System.Windows.Forms.TabPage tabPage5;
+        public System.Windows.Forms.TabPage tabPage6;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.ComboBox currencyCombo;
+        public System.Windows.Forms.TextBox currencyBox;
+        public System.Windows.Forms.Label CursLabel;
+        public System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        public System.Windows.Forms.TextBox lengthTextBox;
+        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.Label totaLengtLabel;
+        public System.Windows.Forms.ComboBox lengthComboFrom;
+        public System.Windows.Forms.TextBox weightTextBox;
+        public System.Windows.Forms.Label label6;
+        public System.Windows.Forms.Label totalWeightLabel;
+        public System.Windows.Forms.ComboBox WeightComboFrom;
+        public System.Windows.Forms.TextBox areaTextBox;
+        public System.Windows.Forms.Label label8;
+        public System.Windows.Forms.Label totalAreaLabel;
+        public System.Windows.Forms.ComboBox areaComboFrom;
+        public System.Windows.Forms.TextBox dataTextBox;
+        public System.Windows.Forms.Label totalDataLabel;
+        public System.Windows.Forms.ComboBox dataComboFrom;
+        public System.Windows.Forms.Label label10;
+        public System.Windows.Forms.TextBox textBox6;
+        public System.Windows.Forms.Label label11;
+        public System.Windows.Forms.ComboBox comboBox6;
+        public System.Windows.Forms.Label label12;
+        public System.Windows.Forms.ComboBox lengthComboTo;
+        public System.Windows.Forms.ComboBox WeightComboTo;
+        public System.Windows.Forms.ComboBox areaComboTo;
+        public System.Windows.Forms.ComboBox dataComboTo;
+        public System.Windows.Forms.ComboBox comboBox7;
+        public System.Windows.Forms.Label label13;
+        public System.Windows.Forms.Label FinalCurseLabel;
     }
 }
 
