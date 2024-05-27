@@ -13,6 +13,7 @@ using System.Xml.Linq;
 using System.Net.Http;
 using Newtonsoft.Json.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Net;
 
 namespace Converter
 {
@@ -269,39 +270,65 @@ namespace Converter
 
         public void textBox1_TextChanged(object sender, EventArgs e)
         {
+            // Проверка наличия интернет-соединения
+            if (!CheckInternetConnection())
+            {
+                FinalCurseLabel.Text = "Нет интернет-соединения";
+                return;
+            }
+
+            // Проверка, выбрана ли валютная пара
+            if (currencyCombo.SelectedItem == null)
+            {
+                MessageBox.Show("Выберите валютную пару.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             string selectedCurrencyPair = currencyCombo.SelectedItem.ToString();
             CurrencyPairs selectedPair = pairsArray.FirstOrDefault(pair => pair.Pair == selectedCurrencyPair);
+
             if (double.TryParse(currencyBox.Text, out double value))
             {
                 double count = double.Parse(currencyBox.Text);
-                if (selectedCurrencyPair != null)
+
+                if (selectedPair.Pair != null)
                 {
-                    if (selectedPair.Pair != null)
+                    if (double.TryParse(selectedPair.Course.ToString(), out double course))
                     {
-                        if (double.TryParse(selectedPair.Course.ToString(), out double course))
-                        {
-                            double total = count * course;
-                            FinalCurseLabel.Text = $"Итого: {total:F2}";
-                        }
-                        else
-                        {
-                            FinalCurseLabel.Text = "Ошибка при парсинге курса";
-                        }
+                        double total = count * course;
+                        FinalCurseLabel.Text = $"Итого: {total:F2}";
                     }
                     else
                     {
-                        FinalCurseLabel.Text = "Курс не найден";
+                        FinalCurseLabel.Text = "Ошибка при парсинге курса";
                     }
                 }
                 else
                 {
-                    FinalCurseLabel.Text = "Валютная пара не выбрана";
+                    FinalCurseLabel.Text = "Курс не найден";
                 }
             }
             else
             {
                 MessageBox.Show("Введите корректное числовое значение.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 FinalCurseLabel.Text = $"Итого: {0}";
+            }
+        }
+
+        // Функция для проверки интернет-соединения
+        private bool CheckInternetConnection()
+        {
+            try
+            {
+                using (var client = new WebClient())
+                using (client.OpenRead("http://google.com/"))
+                {
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
             }
         }
 
